@@ -5,7 +5,7 @@ import Header from '../../components/Header/Header';
 import CONSTANTS from '../../constants';
 import SlideBar from '../../components/SlideBar/SlideBar';
 import Footer from '../../components/Footer/Footer';
-import styles from './Home.module.sass';
+import styles from './Home.module.scss';
 import carouselConstants from '../../carouselConstants';
 import Spinner from '../../components/Spinner/Spinner';
 
@@ -214,6 +214,32 @@ const Home = (props) => {
               />
             </div>
           </div>
+          {/* new component */ }
+          
+          <section className={styles.questionsWrapper}>
+            <article className={styles.innerQuestionsWrapper}>
+              <h2 className={styles.title}>Got Questions?</h2>
+              <p className={styles.description}>Speak with a Squadhelp platform expert to learn more and get your questions answered.</p>
+            <button className={styles.questionButton}>Schedule Consultation</button>
+            </article>
+
+            <article className={styles.innerBtnsWrapper}> 
+              <a href='#' className={styles.questionsLink}>
+               <div className={styles.linkIcon}><i className='fas fa-phone'/></div> 
+                <p>(877) 355-3585</p>
+              </a>
+              <a href='#' className={styles.questionsLink}>
+              <div className={styles.linkIcon}><i className='fas fa-comment'/></div> 
+                <p>Live Chat</p>
+              </a>
+              <a href='#' className={styles.questionsLink}>
+              <div className={styles.linkIcon}><i className='fas fa-envelope'/></div> 
+                <p>Contact Us</p>
+              </a>
+            </article>
+          </section>
+
+          {/* end */}
           <Footer />
         </>
       )}
