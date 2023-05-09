@@ -12,7 +12,7 @@ const ImageUpload = (props) => {
     if (!file.type.match(imageType)) {
       e.target.value = '';
     } else {
-      field.onChange(file);
+      field.onChange(file.type);
       const reader = new FileReader();
       reader.onload = () => {
         node.src = reader.result;
