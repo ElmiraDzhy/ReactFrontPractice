@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Formik } from 'formik';
 import { connect } from 'react-redux';
 import { clearUserError } from '../../actions/actionCreator';
-import styles from './UpdateUserInfoForm.module.sass';
+import styles from './UpdateUserInfoForm.module.scss';
 import ImageUpload from '../InputComponents/ImageUpload/ImageUpload';
 import FormInput from '../FormInput/FormInput';
 import Schems from '../../validators/validationSchems';
