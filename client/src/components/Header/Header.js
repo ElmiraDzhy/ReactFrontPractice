@@ -132,7 +132,6 @@ class Header extends React.Component {
                     />
                     <ul>
                       <li><a href="#">HOW IT WORKS</a></li>
-                      {/* there will be link into new page */ }
                       <Link to="/pricing">
                       <li onClick={this.pricing}><a href="#">PRICING</a></li>                        
                       </Link>
