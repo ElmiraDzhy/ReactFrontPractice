@@ -21,6 +21,10 @@ class Header extends React.Component {
     startContests = () => {
       this.props.history.push('/startContest');
     };
+  
+  pricing = () => {
+    this.props.history.push( '/pricing' );
+  }
 
     renderLoginButtons = () => {
       if (this.props.data) {
@@ -128,7 +132,10 @@ class Header extends React.Component {
                     />
                     <ul>
                       <li><a href="#">HOW IT WORKS</a></li>
-                      <li><a href="#">PRICING</a></li>
+                      {/* there will be link into new page */ }
+                      <Link to="/pricing">
+                      <li onClick={this.pricing}><a href="#">PRICING</a></li>                        
+                      </Link>
                       <li><a href="#">AGENCY SERVICE</a></li>
                       <li><a href="#">ACTIVE CONTESTS</a></li>
                       <li><a href="#">WINNERS</a></li>
