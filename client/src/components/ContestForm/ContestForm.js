@@ -20,11 +20,11 @@ const variableOptions = {
     typeOfName: '',
   },
   [CONSTANTS.LOGO_CONTEST]: {
-    nameVenture: '',
+    nameVenture: null,
     brandStyle: '',
   },
   [CONSTANTS.TAGLINE_CONTEST]: {
-    nameVenture: '',
+    nameVenture: null,
     typeOfTagline: '',
   },
 };
@@ -48,6 +48,10 @@ class ContestForm extends React.Component {
           this.props.getData({ characteristic1: 'brandStyle' });
           break;
         }
+          
+        default: {
+          break;
+        }
       }
     }
 
@@ -55,8 +59,8 @@ class ContestForm extends React.Component {
       this.getPreference();
     }
 
-    render() {
-      const { isFetching, error } = this.props.dataForContest;
+  render() {
+    const { isFetching, error } = this.props.dataForContest;
       if (error) {
         return <TryAgain getData={this.getPreference} />;
       }
