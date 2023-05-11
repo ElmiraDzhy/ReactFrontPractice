@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./Pricing.module.scss";
 import BoxPrice from "../../components/BoxPrice";
 import Header from "../../components/Header/Header";
+import AgencyBlock from "../../components/AgencyBlock";
+import Footer from "../../components/Footer/Footer";
 
 const pricing = [
 	{
@@ -71,15 +73,30 @@ const pricing = [
 	},
 ];
 
+const agency = [
+	{
+		title: "Agency or Enterprise?",
+		description: `To learn more about volume discounts and additional
+  services, please contact our business development team.`,
+		linkName: "Contact Us",
+	},
+	{
+		title: "More questions?",
+		description: `We're here to help. Check out our FAQs, send us an email,
+  or give us a call at +1 (877) 355-3585`,
+		linkName: "Schedule branding consultation ",
+	},
+];
+
 function Pricing() {
 	return (
-		<div>
+		<>
 			<Header />
 			<div className={styles["pricing-page"]}>
 				<section className={styles["pricing-for"]}>
 					<div className={styles.wrapper}>
 						<p>Pricing For</p>
-						<select name="contest_types">
+						<select className={styles['contest-types']} name="contest_types">
 							<option>Name</option>
 							<option>Logo</option>
 							<option>Tagline</option>
@@ -107,12 +124,22 @@ function Pricing() {
 					))}
 				</main>
 				<section className={styles["get-started"]}>
-					<p>All packages include the award amount <br/> for the winning creative and all fees and commissions.</p>
+					<p>
+						All packages include the award amount <br /> for the winning creative and all fees and commissions.
+					</p>
 					<button>Get Started now</button>
 				</section>
-				<section className={styles["agency-block"]}></section>
-			</div>
-		</div>
+				<section className={styles["agency-block"]}>
+					{agency.map((i, index) => (
+						<AgencyBlock
+							{...i}
+							key={index}
+						/>
+					))}
+				</section>
+      </div>
+      <Footer/>
+		</>
 	);
 }
 

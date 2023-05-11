@@ -23,17 +23,17 @@ function BoxPrice(props) {
 
 			{props.subMenu && (
 				<div className={styles["sub-menu"]}>
-					<div>Prize to Winner - ${`${props.subMenu.toWinner}`} (Included)</div>
-					<div>Validation Services & Upgrades (${`${props.subMenu.validServisePrice}`} value)</div>
+					<div className={styles['to-winner']}>Prize to Winner - ${`${props.subMenu.toWinner}`} (Included)</div>
+					<div className={styles['valid-service']}>Validation Services & Upgrades (${`${props.subMenu.validServisePrice}`} value)</div>
 					{privilege && (
 						<ul className={styles["privilege-list"]}>
 							{privilege.map((i, index) => (
-								<li key={index}>{i}</li>
+								<li key={index}> <i className="fas fa-check" style={{fontSize: '10px', marginLeft:'10px', marginRight: '2px'}}></i> {i}</li>
 							))}
 						</ul>
 					)}
-					<div>Expected {`${props.subMenu.entries}`}+ Entries</div>
-					{partialRefund && <div>Partial refund option</div>}
+					<div className={styles.entries}>Expected {`${props.subMenu.entries}`}+ Entries</div>
+					{partialRefund && <div className={styles.refund}>Partial refund option</div>}
 				</div>
 			)}
 
@@ -41,7 +41,8 @@ function BoxPrice(props) {
 
 			<button
 				className={styles["start-button"]}
-				style={{ backgroundColor: `${color}` }}>
+        style={ { backgroundColor: `${color}` } }>
+        <i className="fas fa-check" style={{marginRight: '6px'}}></i>
 				Start
 			</button>
 		</article>
