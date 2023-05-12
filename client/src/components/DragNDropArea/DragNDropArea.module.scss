@@ -1,0 +1,42 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 50vw;
+  height: 30vw;
+  margin: 5vh auto;
+
+  background-color: rgba(226, 226, 226, 0.699);
+  border: 3px dashed grey;
+
+  font-size: 25px;
+  line-height: 1.5;
+  color: gray;
+
+  > *{
+    margin: 2% 0;
+  }
+}
+
+.label-btn{
+  color: rgb(0, 138, 138);
+  font-size: 15px;
+  padding: 20px 40px;
+  border: 1px solid rgb(0, 138, 138);
+  border-radius: 5px;
+
+  &:hover{
+    cursor: pointer;
+  border: 1px solid rgb(0, 70, 70);
+
+  }
+}
+
+
+.active{
+  border: 2px solid rgb(0, 61, 0);
+  background-color: rgb(166, 245, 166);
+  color: rgb(48, 48, 48);
+}
