@@ -3,10 +3,10 @@ import { Form, Formik } from 'formik';
 import { connect } from 'react-redux';
 import { clearUserError } from '../../actions/actionCreator';
 import styles from './UpdateUserInfoForm.module.scss';
-import ImageUpload from '../InputComponents/ImageUpload/ImageUpload';
 import FormInput from '../FormInput/FormInput';
 import Schems from '../../validators/validationSchems';
 import Error from '../Error/Error';
+import DragNDropArea from '../DragNDropArea';
 
 const UpdateUserInfoForm = (props) => {
   const {
@@ -58,14 +58,7 @@ const UpdateUserInfoForm = (props) => {
             }}
           />
         </div>
-        <ImageUpload
-          name="file"
-          classes={{
-            uploadContainer: styles.imageUploadContainer,
-            inputContainer: styles.uploadInputContainer,
-            imgStyle: styles.imgStyle,
-          }}
-        />
+        <DragNDropArea name="file"/>
         <button type="submit" disabled={submitting}>
           Submit
         </button>
