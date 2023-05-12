@@ -19,6 +19,7 @@ import CONSTANTS from './constants';
 import browserHistory from './browserHistory';
 import ChatContainer from './components/Chat/ChatComponents/ChatContainer/ChatContainer';
 import Pricing from './pages/Pricing/Pricing';
+import DragNDropArea from './components/DragNDropArea';
 
 class App extends Component {
   render() {
@@ -68,7 +69,9 @@ class App extends Component {
           <Route exact path="/dashboard" component={PrivateHoc(Dashboard)} />
           <Route exact path="/contest/:id" component={PrivateHoc(ContestPage)} />
           <Route exact path="/account" component={ PrivateHoc( UserProfile ) } />
-          <Route exact path="/pricing" component={Pricing} />
+          <Route exact path="/pricing" component={ Pricing } />
+          <Route exact path="/dragdrop" component={DragNDropArea} />
+          
           <Route component={ NotFound } />
          
           
