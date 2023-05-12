@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { useField } from "formik";
 
 function DragNDropArea(props) {
-	const [field, meta, helpers] = useField(props.name);
+	const [field, , helpers] = useField(props.name);
 	const [dragOn, setDragOn] = useState(false);
 	const className = classNames(styles.container, {
 		[styles.active]: dragOn,
@@ -18,28 +18,17 @@ function DragNDropArea(props) {
 		setDragOn(true);
 	};
 
-	const drop = (e) => {
-		setDragOn(false);
-	};
-
 	const inputChangeHandler = (e) => {
 		setDragOn(false);
 		const reader = new FileReader();
 		reader.readAsDataURL(e.target.files[0]);
 		reader.onload = () => {
-      helpers.setValue(reader.result )
+			helpers.setValue(reader.result);
 		};
-
-
-	};
-
-	const submitHandler = () => {
-    helpers.setValue('')
 	};
 
 	const clearInput = () => {
-    helpers.setValue('')
-
+		helpers.setValue("");
 	};
 
 	const imgPreviewLayout = (
@@ -50,11 +39,6 @@ function DragNDropArea(props) {
 				className={styles["img-preview"]}
 			/>
 			<div className={styles.wrapper}>
-				<button
-					onClick={submitHandler}
-					className={styles["btn"]}>
-					Submit
-				</button>
 				<button
 					onClick={clearInput}
 					className={styles["btn"]}>
@@ -74,7 +58,6 @@ function DragNDropArea(props) {
 				onChange={inputChangeHandler}
 				onDragLeave={dragLeave}
 				onDragOver={dragOver}
-				onDrop={drop}
 			/>
 			<i class="fas fa-upload"></i>
 			<h3>Drag&Drop files here</h3>
